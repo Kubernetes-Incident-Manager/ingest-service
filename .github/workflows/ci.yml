@@ -1,17 +1,19 @@
-name: CI Build and Push
+name: Service CI
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
+    branches: [develop, main]
+  pull_request:
+    branches: [develop, main]
+permissions:
+  contents: read
+  packages: write
+  security-events: write
 
 jobs:
-  build-and-push:
+  ci:
     uses: Kubernetes-Incident-Manager/Kubernetes-Tracker/.github/workflows/reusable-ci.yml@v1
     with:
-      image_name: ingest-service
-    secrets:
-      ACR_LOGIN_SERVER: ${{ secrets.ACR_LOGIN_SERVER }}
-      ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
-      ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
+      node_version: "18"
+      image_name: "ingest-service"
+    secrets: inherit
