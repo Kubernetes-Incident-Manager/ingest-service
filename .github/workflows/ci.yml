@@ -15,4 +15,5 @@ jobs:
     uses: Kubernetes-Incident-Manager/Kubernetes-Tracker/.github/workflows/reusable-ci.yml@main
     with:
       image_name: "ingest-service"
+      python_version: "3.11"
     secrets: inherit
