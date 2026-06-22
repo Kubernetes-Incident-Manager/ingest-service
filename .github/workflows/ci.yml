@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   ci:
-    uses: Kubernetes-Incident-Manager/Kubernetes-Tracker/.github/workflows/reusable-ci.yml@v1
+    uses: Kubernetes-Incident-Manager/Kubernetes-Tracker/.github/workflows/reusable-ci.yml@main
     with:
       node_version: "18"
       image_name: "ingest-service"
