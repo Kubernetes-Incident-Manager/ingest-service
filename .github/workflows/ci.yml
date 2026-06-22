@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-push:
-    uses: Kubernetes-Incident-Manager/Kubernetes-Tracker/.github/workflows/reusable-ci.yml@main
+    uses: Kubernetes-Incident-Manager/Kubernetes-Tracker/.github/workflows/reusable-ci.yml@v1
     with:
       image_name: ingest-service
     secrets:
